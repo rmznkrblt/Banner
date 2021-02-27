@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+      }
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      #app {
+        font-family: "Nunito", sans-serif;
+        align-self: center;
+        text-align: center;
+        color: black;
+      }
+      #app > .head_one {
+        font-size: 48px;
+      }
+      #app > .head_two {
+        font-size: 32px;
+      }
+      .point {
+        font-size: 42px;
+        font-family: "Pacifico", cursive;
+      }
+      .point_small {
+        font-size: 28px;
+        font-family: "Pacifico", cursive;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="particles-js"></div>
+    <div id="app">
+      <div class="head_one" id="head_one"></div>
+      <div class="head_two" id="head_two"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script type="text/javascript">
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#000000" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 }
+          },
+          opacity: {
+            value: 0.25,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#000000",
+            opacity: 0.3,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 5,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 }
+          }
+        },
+        retina_detect: true
+      });
+      const typeWriterOne = new Typewriter("#head_one", {
+        delay: 20,
+        deleteSpeed: 20,
+        stringSplitter: true
+      });
+      const typeWriterTwo = new Typewriter("#head_two", {
+        delay: 20,
+        deleteSpeed: 20
+      });
+
+      typeWriterOne
+        .typeString("Hey there, I'm <span class='point'>Ramazan.</span>")
+        .pauseFor(2300)
+        .deleteAll()
+        .typeString("I'm a <span class='point'>Computer Engineering Student and Junior Software Developer</span>")
+        .pauseFor(1000)
+        .deleteChars(58)
+        .typeString("<span class='point'>Tech Geek</span>")
+        .pauseFor(3000)
+        .deleteAll()
+        .typeString("Check out my work!")
+        .pauseFor(3000)
+        .start();
+
+      typeWriterTwo
+        .typeString("Nice to meet you")
+        .pauseFor(3000)
+        .deleteAll()
+        .typeString("C#, ASP.Net, Angular, JavaScript, MSSQL, Html, Css, Bootstrap")
+        .pauseFor(1000)
+        .deleteAll()
+        .pauseFor(4500)
+        .deleteAll()
+        .typeString(
+          "Linkedin: <span class='point_small'><a href='https://www.linkedin.com/in/ramazankarabulut/' target='_blank' >@ramazankarabulut</a></span>,<br>Medium : <span class='point_small'><a href='https://rmznkrblt.medium.com/' target='_blank' >@rmznkrblt</a>.</span>"
+        )
+        .pauseFor(2500)
+        .start();
+    </script>
+  </body>
+</html>
